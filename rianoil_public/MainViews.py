@@ -2,6 +2,7 @@ from pyramid.view import view_config
 from .MainController import MainController
 from .ErrorCodeController import ErrorCodeController
 from .WebParameters import WebParameters
+from pyquery import PyQuery as pq
 
 from .Scrapper import Scrapper, urlencode
 import  base64
@@ -18,8 +19,8 @@ class MainViews(object):
     def my_view(self):
         return {'project': 'rianoil-public'}
 
-    @view_config(route_name='ignite-search', renderer='jsonp')
-    def ignite_search(self):
+    @view_config(route_name='lion-search', renderer='jsonp')
+    def lion_search(self):
         try:
             self.reqon.checkComplete(self.reqon.REQ_IGNITE_SEARCH)
 
@@ -46,7 +47,7 @@ class MainViews(object):
             if response_data is None or response_data == b'':
                 raise Exception('Result is None')
             
-            result = base64.b64encode(response_data).decode()
+            result = base64.b64encode(pq(response_data)('.content')('.flight-matrix-container').html().encode()).decode()
             return {'code' : 'OK', 'message' : 'result is base64 encoded', 'content' : result}
 
         except Exception as e:
