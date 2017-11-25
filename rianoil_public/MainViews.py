@@ -47,7 +47,12 @@ class MainViews(object):
             if response_data is None or response_data == b'':
                 raise Exception('Result is None')
             
-            result = base64.b64encode(pq(response_data)('.content')('.flight-matrix-container').html().encode()).decode()
+            result_html = ''
+            
+            for per_content in pq(response_data)('.content')('.flight-matrix-container'):
+                result_html += pq(per_content).html()
+
+            result = base64.b64encode(result_html.encode()).decode()
             return {'code' : 'OK', 'message' : 'result is base64 encoded', 'content' : result}
 
         except Exception as e:
