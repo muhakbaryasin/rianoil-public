@@ -5,9 +5,15 @@ development.ini
 production.ini
 pytest.ini
 setup.py
+rianoil_public/ErrorCodeController.py
+rianoil_public/FileLogger.py
+rianoil_public/MainController.py
+rianoil_public/MainViews.py
+rianoil_public/RequestController.py
+rianoil_public/Scrapper.py
+rianoil_public/WebParameters.py
 rianoil_public/__init__.py
 rianoil_public/tests.py
-rianoil_public/views.py
 rianoil_public.egg-info/PKG-INFO
 rianoil_public.egg-info/SOURCES.txt
 rianoil_public.egg-info/dependency_links.txt
