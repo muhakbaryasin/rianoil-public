@@ -13,6 +13,9 @@ rianoil_public/RequestController.py
 rianoil_public/Scrapper.py
 rianoil_public/WebParameters.py
 rianoil_public/__init__.py
+rianoil_public/lion1.html
+rianoil_public/lion2.html
+rianoil_public/lion3.html
 rianoil_public/tests.py
 rianoil_public.egg-info/PKG-INFO
 rianoil_public.egg-info/SOURCES.txt
